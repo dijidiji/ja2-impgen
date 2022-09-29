@@ -1,12 +1,13 @@
 import random
 
 # settings
-is_male = False
-reroll_dupes = True
-avoid_traits = ["","psycho", "coward"]
-allow_dupes = []
-reroll_none = True
-MAX_REROLLS = 5
+# currently irrelevant
+#is_male = False
+#reroll_dupes = True
+#avoid_traits = ["","psycho", "coward"]
+#allow_dupes = []
+#reroll_none = True
+#MAX_REROLLS = 5
 # Min attribute thresholds
 min_hp = 65
 min_dex = 55
@@ -29,80 +30,80 @@ trait_pool = ["ambidextrous", "auto weapons", "camouflaged", "electronics",
               "teaching", "throwing"]
 
 # Questions for vanilla IMP personality test
-q1 = ["martial arts" if is_male else "ambidexterous",
-      "loner",
-      "hand-to-hand",
-      "lockpicking",
-      "throwing",
-      "optimist"]
-q2 = ["teaching",
-      "stealthy",
-      "psycho",
-      "friendly"]
-q3 = ["lockpicking",
-      "arrogant",
-      "stealthy",
-      "normal"]
-q4 = ["auto weapons",
-      "friendly",
-      "normal",
-      "asshole",
-      "loner"]
-q5 = ["coward",
-      "",
-      "aggressive",
-      ""]
-q6 = ["coward",
-      "night ops",
-      "claustrophobic",
-      "",
-      ""]
-q7 = ["electronics",
-      "knifing",
-      "night ops",
-      ""]
-q8 = ["ambidexterous",
-      "",
-      "optimist",
-      "psycho"]
-q9 = ["forgetful",
-      "",
-      "pessimist",
-      "nervous"]
-q10 = ["",
-       "pessimist",
-       "asshole",
-       "nervous"]
-q11 = ["",
-       "teaching",
-       "aggressive",
-       "normal",
-       ""]
-q12 = ["martial arts" if is_male else "ambidexterous",
-       "knifing",
-       "",
-       "auto weapons",
-       "hand-to-hand",
-       "electronics",
-       "",
-       ""]
-q13 = ["forgetful",
-       "normal",
-       "normal",
-       "heat-intolerant"]
-q14 = ["claustrophobic",
-       "normal",
-       "heat-intolerant",
-       ""]
-q15 = ["throwing",
-       "ambidexterous",
-       "arrogant",
-       ""]
+# q1 = ["martial arts" if is_male else "ambidexterous",
+#       "loner",
+#       "hand-to-hand",
+#       "lockpicking",
+#       "throwing",
+#       "optimist"]
+# q2 = ["teaching",
+#       "stealthy",
+#       "psycho",
+#       "friendly"]
+# q3 = ["lockpicking",
+#       "arrogant",
+#       "stealthy",
+#       "normal"]
+# q4 = ["auto weapons",
+#       "friendly",
+#       "normal",
+#       "asshole",
+#       "loner"]
+# q5 = ["coward",
+#       "",
+#       "aggressive",
+#       ""]
+# q6 = ["coward",
+#       "night ops",
+#       "claustrophobic",
+#       "",
+#       ""]
+# q7 = ["electronics",
+#       "knifing",
+#       "night ops",
+#       ""]
+# q8 = ["ambidexterous",
+#       "",
+#       "optimist",
+#       "psycho"]
+# q9 = ["forgetful",
+#       "",
+#       "pessimist",
+#       "nervous"]
+# q10 = ["",
+#        "pessimist",
+#        "asshole",
+#        "nervous"]
+# q11 = ["",
+#        "teaching",
+#        "aggressive",
+#        "normal",
+#        ""]
+# q12 = ["martial arts" if is_male else "ambidexterous",
+#        "knifing",
+#        "",
+#        "auto weapons",
+#        "hand-to-hand",
+#        "electronics",
+#        "",
+#        ""]
+# q13 = ["forgetful",
+#        "normal",
+#        "normal",
+#        "heat-intolerant"]
+# q14 = ["claustrophobic",
+#        "normal",
+#        "heat-intolerant",
+#        ""]
+# q15 = ["throwing",
+#        "ambidexterous",
+#        "arrogant",
+#        ""]
 
-questions = [q1, q2, q3, q4, q5, q6, q7, q8,
-             q9, q10, q11, q12, q13, q14, q15]
-answers = []
-traits = []
+# questions = [q1, q2, q3, q4, q5, q6, q7, q8,
+#              q9, q10, q11, q12, q13, q14, q15]
+# answers = []
+# traits = []
 
 # roll a random answer for the personality test
 # TODO: We need to randomly select two traits to select, as well as one personality type
@@ -145,12 +146,11 @@ def roll_traits():
 def trait_attr_mins(traits, min_mec, min_mrk):
       if "electronics" or "lockpicking" in traits:
             min_mec = max(min_mec, 35)
-      if "lockpicking" in traits:
-            min_mec = max(min_mec, 35)
       if "auto weapons" or "heavy weapons" in traits:
             min_mrk = max(min_mrk, 35)
       return min_mec, min_mrk
 
+# From a stackoverflow post by Mark Dickinson (https://stackoverflow.com/a/3590105)
 def constrained_sum_sample_pos(n, total):
     """Return a randomly chosen list of n positive integers summing to total.
     Each such list is equally likely to occur."""

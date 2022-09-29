@@ -8,6 +8,7 @@ At the top of the script you'll find some variables which set the minimum for at
 Sometimes the script gets stuck. I dunno.
 
 The end result should be a neatly printed output like this (ignore all the debug strings that are printed before it)
+```
 ────────────────────
 camouflaged
 martial arts
@@ -22,3 +23,4 @@ MRK     66
 EXP     42
 MED     46
 MEC     57
+```

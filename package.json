@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "esm": "^3.2.25",
+    "underscore": "^1.13.6"
+  }
+}

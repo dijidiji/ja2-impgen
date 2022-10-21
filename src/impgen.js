@@ -49,7 +49,6 @@ function trait_attr_mins(traits, min_mec, min_mrk) {
  * From a stackoverflow post by Mark Dickinson (https://stackoverflow.com/a/3590105)
  */
 function constrained_sum_sample_pos(n, total) {
-
     var dividers = _.sortBy((_.sample(_.range(1, total), n - 1)));
     var result = zip(dividers.concat([total]), [0].concat(dividers));
     return _.map(result, x => _.reduce(x, (a, b) => a - b));
@@ -104,8 +103,7 @@ function generate() {
     min_skills = _.map(min_skills, x => Math.max(x - 20, 0)); // This modifies the skill values to compensate for the 0 points bonus
     var points = max_point_pool - _.reduce(min_skills, (memo, num) => memo + num);
     [skills, points] = distribute_skills(min_skills, points);
-    skills =  _.map(skills, x => (x > 15 ? x + 20: 0)); // This modifies the skill values to compensate for the 0 points bonus    
-
+    skills = _.map(skills, x => (x > 15 ? x + 20 : 0)); // This modifies the skill values to compensate for the 0 points bonus
     return [traits, skills];
 }
 

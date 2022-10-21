@@ -1,6 +1,4 @@
-import logo from './logo.svg';
 import './App.css';
-import _, { random } from 'underscore';
 import { useState } from 'react';
 import generate from './impgen.js';
 

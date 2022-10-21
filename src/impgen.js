@@ -1,4 +1,4 @@
-import _, { each, map, random, zip } from 'underscore';
+import _ from 'underscore';
 
 // TODO: Support Stracciatella variables for min/max skill range, zero point bonus, and bonus points 
 // TODO: Accommodate 1.13 trait changes
@@ -34,10 +34,10 @@ function roll_traits() {
 // Increase attribute minimums if certain traits are picked
 // TODO: Probably should make this account for other skills
 function trait_attr_mins(traits, min_mec, min_mrk) {
-    if (_.some(traits, x => x == "electronics" || x == "lockpicking")) {
+    if (_.some(traits, x => x === "electronics" || x === "lockpicking")) {
         min_mec = Math.max(min_mec, 35);
     }
-    if (_.some(traits, x => "auto weapons" || x == "heavy weapons")) {
+    if (_.some(traits, x => "auto weapons" || x === "heavy weapons")) {
         min_mrk = Math.max(min_mrk, 35);
     }
     return [min_mec, min_mrk];
@@ -50,7 +50,7 @@ function trait_attr_mins(traits, min_mec, min_mrk) {
  */
 function constrained_sum_sample_pos(n, total) {
     var dividers = _.sortBy((_.sample(_.range(1, total), n - 1)));
-    var result = zip(dividers.concat([total]), [0].concat(dividers));
+    var result = _.zip(dividers.concat([total]), [0].concat(dividers));
     return _.map(result, x => _.reduce(x, (a, b) => a - b));
 }
 

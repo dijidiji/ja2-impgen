@@ -32,33 +32,50 @@ p {
 a {
   color: #61dafbe1;
 }
-table {
-  border-collapse: collapse;
+
+code {
+  background-color: #3c3f45;
 }
 
-td {
-  padding: 2px 8px;
+table {
+  border-collapse: collapse;
 }
 
 tr:nth-child(even) {
   background-color: #3c3f45;
 }
 
+th {
+  font-size: 12pt;
+  padding-bottom: 2px;
+}
+
+td {
+  padding: 2px 8px;
+}
+
+input[type=number] {
+  width: 2em;
+  padding-left: 0.5em;
+  border-width: 1px;
+  border-color: #0000007b;
+  background: none;
+  color: #ffffffce;
+  font-size: calc(10px + 2vmin);
+  text-align: center;
+  vertical-align: middle;
+}
+
 button {
-  margin-top: 15px;
-  padding: 4px 8px;
   border-radius: 4px;
   border-width: 1px;
-  color: #ffffffce;
   border-color: #0000007b;
+  color: #ffffffce;
+  font-size: 20pt;
+  font-weight: bold;
   background-color: #3c3f45;
-  font-size: calc(10px + 2vmin);
 }
 
 button:hover {
   background-color: #3c3f4579;
-}
-
-code {
-  background-color: #3c3f45;
 }

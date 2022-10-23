@@ -6,8 +6,5 @@ If you're playing Stracciatella make sure you set `"pick_skills_directly": true`
 
 If you're playing vanilla, you'll have to follow a guide like [this](https://fadden.com/gaming/ja2/#quiz) to get the right skills from the quiz. Keep in mind that some traits aren't attainable from the quiz.
 
-This attempts to give a viable character by adding a minimum amount of points to the skills. The minimums are:
-`hp = 65, dex = 55, agi = 55, str = 35, wis = 65, ldr = 35, mrk = 65, exp = 0, med = 35, mec = 0`
-However, if electronics or lockpicking are rolled, `mec = 35` and if auto/heavy weapons are rolled, `mrk = 35` to ensure these traits are useful.
-
-In the future these minimums will be configurable on the page.
+You can configure your desired minimum stats if you want to skew the generation in a given way.
+However, if electronics or lockpicking are rolled, the minimum <b>mec</b> score is prevented from being 0 and if auto/heavy weapons are rolled, the minimum <b>mrk</b> is prevented from being 0.This is to ensure you can actually use these traits.

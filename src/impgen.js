@@ -50,12 +50,12 @@ function roll_traits() {
 
 // Increase attribute minimums if certain traits are picked
 // TODO: Probably should make this account for other skills
-function set_trait_attr_mins(traits, min_skills) {
+function set_trait_attr_mins(traits, min_skills, skill_min) {
     if (_.some(traits, x => x === "electronics" || x === "lockpicking")) {
-        min_skills[9] = Math.max(min_skills[9], 35); 
+        min_skills[9] = Math.max(min_skills[9], skill_min); 
     }
     if (_.some(traits, x => "auto weapons" || x === "heavy weapons")) {
-        min_skills[6] = Math.max(min_skills[6], 35);
+        min_skills[6] = Math.max(min_skills[6], skill_min);
     }
 }
 
@@ -157,7 +157,7 @@ function generate(min_skills, skill_min, skill_max, zero_skill_bonus, bonus_poin
     var max_points = convert_to_points(skill_max, skill_min, zero_skill_bonus);
     // Generate traits and update attribute minimums.
     var traits = roll_traits();
-    set_trait_attr_mins(traits, min_skills);
+    set_trait_attr_mins(traits, min_skills, skill_min);
     // Calculate how many points are available.
     var point_pool = calculate_point_pool(skill_min, skill_max, zero_skill_bonus, bonus_points);
     var points = point_pool - _.reduce(min_skills, (memo, num) => memo + num, 0);
